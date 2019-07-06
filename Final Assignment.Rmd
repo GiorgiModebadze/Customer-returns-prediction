@@ -1,9 +1,11 @@
 ---
 title: "Predicting customer return behaviour on items puchased online"
 author: "GiorgiModebadze"
-mail: "giorgi.modebadze@hu-berlin.de"
 date: "3/16/2019"
-output: pdf_document
+always_allow_html: yes
+output:
+  md_document:
+    variant: markdown_github
 ---
 
 ```{r setup, include=FALSE}
@@ -38,8 +40,8 @@ The purpose of this document is to analyze the provided data regarding historica
 As the first step exploratory data analysis is done in order to discover patterns in data and get overall understanding of it. First let us take a look at the data itself. 
 
 ```{r}
-knownData = read.csv(file = "../BADSFinal/BADS_WS1819_known.csv")
-unknownData = read.csv(file ="../BADSFinal/BADS_WS1819_unknown.csv")
+knownData = read.csv(file = "BADS_WS1819_known.csv")
+unknownData = read.csv(file ="BADS_WS1819_unknown.csv")
 
 knownData = knownData[-1] ## remove order id as it does not play any role
 knownData$user_dob = as.Date(knownData$user_dob, format = "%Y-%m-%d")
